@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book - View All</title>
+</head>
+<body>
+<h1>All Books</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Date Published</th>
+    </tr>
+    <% for(var i = 0; i < books.length; i++) { %>
+    <tr>
+        <td><%= books[i].book_id %></td>
+        <td><%= books[i].title %></td>
+        <td><%= books[i].author %></td>
+        <td><%= books[i].genre %></td>
+        <td><%= books[i].date_published %></td>
+    </tr>
+    <% } %>
+</table>
+<br />
+<a href="http://localhost:3000/">Home</a>
+</body>
+</html>

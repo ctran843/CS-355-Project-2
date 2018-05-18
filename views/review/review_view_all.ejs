@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review - View All</title>
+</head>
+<body>
+<h1>Reviews</h1>
+
+<table border="1">
+    <tr>
+        <th>Username</th>
+        <th>Title</th>
+        <th>Review</th>
+    </tr>
+    <% for(var i = 0; i < reviews.length; i++) { %>
+    <tr>
+        <td><%= reviews[i].username %></td>
+        <td><%= reviews[i].title %></td>
+        <td><%= reviews[i].review %></td>
+    </tr>
+    <% } %>
+</table>
+<br />
+<a href="http://localhost:3000/">Home</a>
+</body>
+</html>

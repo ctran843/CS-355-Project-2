@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Rating - Add</title>
+</head>
+<body>
+<h1> Rate a Book</h1>
+<form action="/rating/insert" method="get">
+    User ID: <input name="user_id" type="number" />
+    <br />
+    <br />
+    Book ID: <input name="book_id" type="number" />
+    <br />
+    <br />
+    Rating (1-5): <input name="rating" type="number" min="1" max="5" />
+    <br />
+    <br />
+    <input type="submit" />
+
+</form>
+<br />
+<a href="http://localhost:3000/">Home</a>
+</body>
+</html>

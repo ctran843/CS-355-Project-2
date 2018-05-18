@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books Completed - View All</title>
+</head>
+<body>
+<h1>Books Completed</h1>
+
+<table border="1">
+    <tr>
+        <th>Username</th>
+        <th>Title</th>
+    </tr>
+    <% for(var i = 0; i < books_completed.length; i++) { %>
+    <tr>
+        <td><%= books_completed[i].username %></td>
+        <td><%= books_completed[i].title %></td>
+    </tr>
+    <% } %>
+</table>
+<br />
+<a href="http://localhost:3000/">Home</a>
+</body>
+</html>

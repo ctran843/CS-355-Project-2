@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books To Read - View All</title>
+</head>
+<body>
+<h1>Books To Read</h1>
+
+<table border="1">
+    <tr>
+        <th>Username</th>
+        <th>Title</th>
+    </tr>
+    <% for(var i = 0; i < books_to_read.length; i++) { %>
+    <tr>
+        <td><%= books_to_read[i].username %></td>
+        <td><%= books_to_read[i].title %></td>
+    </tr>
+    <% } %>
+</table>
+<br />
+<a href="http://localhost:3000/">Home</a>
+</body>
+</html>
