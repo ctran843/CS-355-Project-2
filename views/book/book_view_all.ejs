@@ -13,6 +13,7 @@
         <th>Author</th>
         <th>Genre</th>
         <th>Date Published</th>
+        <th>Actions</th>
     </tr>
     <% for(var i = 0; i < books.length; i++) { %>
     <tr>
@@ -21,6 +22,14 @@
         <td><%= books[i].author %></td>
         <td><%= books[i].genre %></td>
         <td><%= books[i].date_published %></td>
+        <td>
+            <a href="/book/edit/?book_id=<%= books[i].book_id %>">
+                Edit
+            </a>
+            <a href="/book/delete/?book_id=<%= books[i].book_id %>">
+                Delete
+            </a>
+        </td>
     </tr>
     <% } %>
 </table>

@@ -31,4 +31,39 @@ router.get('/insert', function(req, res) {
   });
 });
 
+router.get('/edit', function(req, res) {
+    user_dal.getinfo(req.query.user_id, function(err, result) {
+        if (err) {
+            res.send(err);
+        }
+        else {
+            res.render('user/user_update', {user: result[0]}
+            );
+        }
+    });
+});
+
+router.get('/update', function(req, res) {
+    user_dal.update(req.query, function(err, result) {
+        if(err) {
+            res.send(err);
+        }
+        else {
+            res.redirect(302, '/user/all');
+        }
+    });
+});
+
+router.get('/delete', function(req, res) {
+    user_dal.delete(req.query.user_id, function(err, result) {
+        if(err) {
+            console.log(err);
+            res.send(err);
+        }
+        else {
+            res.redirect(302, '/user/all');
+        }
+    });
+});
+
 module.exports = router;

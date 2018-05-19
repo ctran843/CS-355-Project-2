@@ -21,3 +21,31 @@ exports.insert = function(params, callback) {
         callback(err, result);
     });
 };
+
+exports.getinfo = function(user_id, callback) {
+    var query = 'SELECT * FROM user WHERE user_id = ?;';
+    var queryData = [user_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE user SET username = ?, email = ?, password = ? WHERE user_id = ?';
+
+    var queryData = [params.username, params.email, params.password, params.user_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.delete = function(user_id, callback) {
+    var query = 'DELETE FROM user WHERE user_id = ?;';
+    var queryData = [user_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};

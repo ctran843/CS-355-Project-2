@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Rating - Edit</title>
+</head>
+<body>
+<h1> Edit a Rating</h1>
+<form action="/rating/update" method="get">
+    <input type="hidden"
+           id="user_id"
+           name="user_id"
+           value="<%= rating.user_id %>"/>
+    <input type="hidden"
+           id="book_id"
+           name="book_id"
+           value="<%= rating.book_id %>"/>
+    User ID: <input
+            id="user_id"
+            name="user_id"
+            type="number"
+            value="<%= rating.user_id %>"/>
+    <br />
+    <br />
+    Book ID: <input
+            id="book_id"
+            name="book_id"
+            type="number"
+            value="<%= rating.book_id %>"/>
+    <br />
+    <br />
+    Rating (1-5): <input
+            id="rating"
+            name="rating"
+            type="number"
+            min="1"
+            max="5"
+            value="<%= rating.rating %>"/>
+    <br />
+    <br />
+    <input type="submit" />
+
+</form>
+<br />
+<a href="http://localhost:3000/">Home</a>
+</body>
+</html>

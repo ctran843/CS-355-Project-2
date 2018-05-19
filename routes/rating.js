@@ -31,4 +31,27 @@ router.get('/insert', function(req, res) {
     });
 });
 
+router.get('/edit', function(req, res) {
+    rating_dal.getinfo(req.query.user_id, req.query.book_id, function(err, result) {
+        if (err) {
+            res.send(err);
+        }
+        else {
+            res.render('rating/rating_update', {rating: result[0]}
+            );
+        }
+    });
+});
+
+router.get('/update', function(req, res) {
+    rating_dal.update(req.query, function(err, result) {
+        if(err) {
+            res.send(err);
+        }
+        else {
+            res.redirect(302, '/rating/all');
+        }
+    });
+});
+
 module.exports = router;

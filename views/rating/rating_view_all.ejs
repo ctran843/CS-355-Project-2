@@ -17,6 +17,11 @@
         <td><%= ratings[i].title %></td>
         <td><%= ratings[i].rating %></td>
         <td><%= ratings[i].username %></td>
+        <td>
+            <a href="/rating/edit/?user_id=<%= ratings[i].user_id %>&?book_id=<%=ratings[i].book_id%>">
+                Edit
+            </a>
+        </td>
     </tr>
     <% } %>
 </table>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Book - Edit</title>
+</head>
+<body>
+<h1> Edit Book</h1>
+<form action="/book/update" method="get">
+    <input type="hidden"
+           id="book_id"
+           name="book_id"
+           value="<%= book.book_id %>"/>
+    Title: <input
+            id="title"
+            name="title"
+            type="text"
+            value="<%= book.title %>"/>
+    <br />
+    <br />
+    Author: <input
+            id="author"
+            name="author"
+            type="text"
+            value="<%= book.author %>"/>
+    <br />
+    <br />
+    Genre: <input
+            id="genre"
+            name="genre"
+            type="text"
+            value="<%= book.genre %>"/>
+    <br />
+    <br />
+    Date Published: <input
+            id="date_published"
+            name="date_published"
+            type="text"
+            value="<%= book.date_published%>"/>
+    <br />
+    <br />
+    <input type="submit" />
+
+</form>
+<br />
+<a href="http://localhost:3000/">Home</a>
+</body>
+</html>

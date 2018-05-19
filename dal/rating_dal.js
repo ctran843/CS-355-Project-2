@@ -21,3 +21,22 @@ exports.insert = function(params, callback) {
         callback(err, result);
     });
 };
+
+exports.getinfo = function(user_id, book_id, callback) {
+    var query = 'SELECT * FROM rating WHERE user_id = ?, book_id = ?;';
+    var queryData = [user_id, book_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE rating SET user_id = ?, book_id = ?, rating = ? WHERE user_id = ? AND book_id = ?';
+
+    var queryData = [params.user_id, params.book_id, params.rating, params.user_id, params.book_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};

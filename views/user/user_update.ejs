@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> User - Edit</title>
+</head>
+<body>
+<h1> Edit User</h1>
+<form action="/user/update" method="get">
+    <input type="hidden"
+           id="user_id"
+           name="user_id"
+           value="<%= user.user_id %>"/>
+    Username: <input
+            id="username"
+            name="username"
+            type="text"
+            value="<%= user.username %>"/>
+    <br />
+    <br />
+    Password: <input
+            id="password"
+            type="password"
+            name="password"
+            type="text"
+            value="<%= user.password %>"/>
+    <br />
+    <br />
+    Email-Address: <input
+            id="email"
+            name="email"
+            type="email"
+            value="<%= user.email %>"/>
+    <br />
+    <br />
+    <input type="submit" />
+
+</form>
+<br />
+<a href="http://localhost:3000/">Home</a>
+</body>
+</html>
